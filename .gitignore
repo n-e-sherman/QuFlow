@@ -1,0 +1,7 @@
+notebooks/*
+extras/*
+env/*
+.ipynb_checkpoints/*
+activate
+.DS_Store
+**/__pycache__
