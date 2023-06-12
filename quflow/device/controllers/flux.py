@@ -1,6 +1,6 @@
 from .parameter import ParameterController
-from qusim.schedule.channels import Channel, FluxChannel
-from qusim.device.qubits import Qubit
+from quflow.schedule.channels import Channel, FluxChannel
+from quflow.device.qubits import Qubit
 
 class FluxController(ParameterController):
         

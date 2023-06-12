@@ -2,7 +2,7 @@ from ._base import Channel
 from typing import Union, Any
 from matplotlib.axes import Axes
 import matplotlib.patches as patches
-from qupy.schedule.instructions import ParameterChanger
+from quflow.schedule.instructions import ParameterChanger
 
 class ParameterChannel(Channel):
 
@@ -22,7 +22,7 @@ class ParameterChannel(Channel):
         
         if len(self.instruction_boundaries) == 0:
             return 0
-        instruction_index = 0
+        instruction_index = -1
         for i, boundary in enumerate(self.instruction_boundaries):
             if time < boundary:
                 break

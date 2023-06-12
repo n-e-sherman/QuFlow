@@ -24,7 +24,8 @@ class Schedule:
             raise ValueError("trying to implement instruction on qubit {} that is not on the device".format(node))
         
         qubit["instructions"].append(instruction)
-        channels = qubit.get("channels", None)
+        ### TODO: This does not allow controls on couplers instead of on qubits.
+        channels = qubit.get("channels", None) 
         channel = channels.get(channel_name, channels.get(instruction.channel_name, None))
         if channel is None:
             raise ValueError("There is no channel that permits this instruction.")
@@ -57,6 +58,8 @@ class Schedule:
         
         if self._compiled:
             return
+        ''' TODO: implement _set_instruction_times so that 
+            it will infer start and end times if not given. '''
         self._set_instruction_times()
         
         # get max_time
@@ -83,7 +86,6 @@ class Schedule:
         
         self.compile_schedule()
         
-        # could only do qubits with instructions later.
         qubits = self.active_qubits
         fig, axes = plt.subplots(len(qubits),1, squeeze=False, subplot_kw={'ymargin': 0.05})
         axs = axes.ravel()
@@ -145,7 +147,7 @@ class Schedule:
                 
     def _set_channels(self) -> None:
         
-        from qupy.device.controllers import PulseController
+        from quflow.device.controllers import PulseController
          
         self.qubits = {}
         for node in self.device.topology.nodes.data():

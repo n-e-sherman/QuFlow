@@ -1,7 +1,7 @@
 from ._base import Channel
 from typing import Union, Any
 from matplotlib.axes import Axes
-from qupy.schedule.instructions import Delay
+from quflow.schedule.instructions import Delay
 import numpy as np
 
 class PulseChannel(Channel):
@@ -23,6 +23,9 @@ class PulseChannel(Channel):
         
     def instruction(self, time: Union[int, float]) -> Any:
         
+        if time > self.max_time:
+            raise ValueError('time: {} given is greater than the max_time: {} scheduled.'.format(time, self.max_time))
+        
         if len(self.instruction_boundaries) == 0:
             return 0
         instruction_index = 0
@@ -30,7 +33,7 @@ class PulseChannel(Channel):
             if time < boundary:
                 break
             instruction_index += 1
-        instruction = self.instructions[instruction_index]
+        instruction = self.instructions[instruction_index-1]
         
         return instruction.magnitude(time - instruction.start)
         

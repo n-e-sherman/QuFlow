@@ -33,4 +33,4 @@ class ParameterChanger(Instruction):
     @property
     def value(self) -> Any:
         return self._value
-    
+

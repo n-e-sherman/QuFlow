@@ -1,4 +1,4 @@
-from qupy.schedule.instructions import Instruction
+from quflow.schedule.instructions import Instruction
 from typing import Union, Any
 from matplotlib.axes import Axes
 
@@ -87,7 +87,7 @@ class Channel:
     def _build_instruction_boundaries(self) -> None:
         self.instruction_boundaries = []
         for instruction in self.instructions:
-            if instruction.start > 0:
+            if instruction.start >= 0:
                 self.instruction_boundaries.append(instruction.start)
     
     def _fill_gap(self, index: int, start: Union[int, float], end: Union[int, float]) -> None:

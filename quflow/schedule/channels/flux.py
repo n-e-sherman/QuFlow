@@ -1,5 +1,5 @@
 from .parameter import ParameterChannel
-from qupy.schedule.instructions import Flux
+from quflow.schedule.instructions import Flux
 
 class FluxChannel(ParameterChannel):
     

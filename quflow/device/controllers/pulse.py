@@ -1,5 +1,5 @@
 from ._base import Controller
-from qusim.schedule.channels import Channel, PulseChannel
+from quflow.schedule.channels import Channel, PulseChannel
 
 class PulseController(Controller):
     '''

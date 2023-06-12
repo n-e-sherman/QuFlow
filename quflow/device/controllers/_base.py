@@ -1,4 +1,5 @@
-from qusim.schedule.channels import Channel
+from quflow.schedule.channels import Channel
+from quflow.device.qubits import Qubit
 
 class Controller:
     
@@ -8,6 +9,9 @@ class Controller:
         
         self._channel_name = channel_name
         self._channel_type = channel_type
+    
+    def update_qubit(self, qubit: Qubit, instruction: None) -> None:
+        pass
     
     def build_channel(self) -> Channel:
         return self._channel_type()
