@@ -15,6 +15,8 @@ This defines the two-qubit Hamiltonian for the qubits that are connected to each
 ###### Controller:
 This defines the time-dependent terms in the Hamiltonian that are used to control the qubits. Controllers also require a "channel_name", and "channel_type", which are used in the Schedule module.
 
+
+
 ### Schedule: 
 This module enables implementing pulse sequences to perform quantum computations at the pulse level. There is also the ability to change parameters of the device for a specified time. This can be thought of as an ideal flux insertion for example.
 There is a "compile_schedule" method that will take all specified Instructions, and create a full schedule.
@@ -28,9 +30,12 @@ This class also includes drawing a channel for seeing a full schedule of instruc
 ###### Instruction:
 This class is used to add specific instructions on the Schedule. This includes a specific pulse, on a specified Channel corresponding to a Control on the Device, or a change of the Device parameters for a specified time. All Instructions must have a start time and final time. (Working on infering start and end times if not specified).
 
+
+
 ### Simulator:
 This module will take a Schedule (which includes a Device), and then define a Hamiltonian (or Lindbladian) to perform time evolution. The schedule will discretize time for us, and then we treat the Schedule as piecewise constant for each time step, enabling straightforward time evolution.
-**This module is currently not**
+
+**This module is currently not implemented.**
 
 
 
