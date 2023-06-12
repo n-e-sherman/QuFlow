@@ -1,6 +1,6 @@
 # QuFlow
 
-&#10021;&#10021; This project is still in development &#10021;&#10021;
+&#10021;&#10021; **This project is still in development.** &#10021;&#10021;
 
 Package for the simulation of quantum processors.
 There are three major modules in this code base: Device, Schedule, Simulator.
@@ -36,7 +36,7 @@ This class is used to add specific instructions on the Schedule. This includes a
 ### Simulator:
 This module will take a Schedule (which includes a Device), and then define a Hamiltonian (or Lindbladian) to perform time evolution. The schedule will discretize time for us, and then we treat the Schedule as piecewise constant for each time step, enabling straightforward time evolution.
 
-**This module is currently not implemented.**
+&#10021;&#10021; **This module is currently not implemented.** &#10021;&#10021;
 
 
 
