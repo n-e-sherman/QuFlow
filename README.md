@@ -1,5 +1,9 @@
 # QuFlow
-&#9733&#9733 This project is still in development &#9733&#9733
+0x22c6
+\0022c6
+&#8902;
+
+&#9733;&#9733; This project is still in development &#9733;&#9733;
 
 Package for the simulation of quantum processors.
 There are three major modules in this code base: Device, Schedule, Simulator.
